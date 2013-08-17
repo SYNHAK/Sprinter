@@ -32,29 +32,36 @@
 
 //// Calibration variables
 // X, Y, Z, E steps per unit - Metric Prusa Mendel with Wade extruder:
-#define _AXIS_STEP_PER_UNIT {80, 80, 3200/1.25,700}
+//#define _AXIS_STEP_PER_UNIT {80, 80, 3200/1.25,700}
 // Metric Prusa Mendel with Makergear geared stepper extruder:
 //#define _AXIS_STEP_PER_UNIT {80,80,3200/1.25,1380}
 // MakerGear Hybrid Prusa Mendel:
 // Z axis value is for .9 stepper(if you have 1.8 steppers for Z, you need to use 2272.7272)
 //#define _AXIS_STEP_PER_UNIT {104.987, 104.987, 4545.4544, 1487}
+// via http://start3dprinting.com/2013/04/makergear-prusa-mendel-kit-part-4/
+//#define _AXIS_STEP_PER_UNIT {51.500743404036086, 53.0181189648448, 2015.748031496063, 471.5};
 
+// Official makergear manual?
+//#define _AXIS_STEP_PER_UNIT {87.489, 87.489, 251.96, 1520};
+
+// shit
+#define _AXIS_STEP_PER_UNIT {52.4934, 52.4934, 2015.748031496063, 471.5};
 
 //// Endstop Settings
 #define ENDSTOPPULLUPS // Comment this out (using // at the start of the line) to disable the endstop pullup resistors
 // The pullups are needed if you directly connect a mechanical endswitch between the signal and ground pins.
 //If your axes are only moving in one direction, make sure the endstops are connected properly.
 //If your axes move in one direction ONLY when the endstops are triggered, set [XYZ]_ENDSTOP_INVERT to true here:
-const bool X_ENDSTOP_INVERT = false;
-const bool Y_ENDSTOP_INVERT = false;
-const bool Z_ENDSTOP_INVERT = false;
+const bool X_ENDSTOP_INVERT = true;
+const bool Y_ENDSTOP_INVERT = true;
+const bool Z_ENDSTOP_INVERT = true;
 
 // This determines the communication speed of the printer
 #define BAUDRATE 115200
 //#define BAUDRATE 250000
 
 // Comment out (using // at the start of the line) to disable SD support:
-#define SDSUPPORT
+//#define SDSUPPORT
 
 // Uncomment to make run init.g from SD on boot
 //#define SDINITFILE
@@ -71,11 +78,11 @@ const bool Z_ENDSTOP_INVERT = false;
 // M502 - reverts to the default "factory settings". You still need to store them in EEPROM afterwards if you want to.
 // M503 - Print settings
 // define this to enable eeprom support
-//#define USE_EEPROM_SETTINGS
+#define USE_EEPROM_SETTINGS
 
 // to disable EEPROM Serial responses and decrease program space by ~1000 byte: comment this out:
 // please keep turned on if you can.
-//#define PRINT_EEPROM_SETTING
+#define PRINT_EEPROM_SETTING
 
 //-----------------------------------------------------------------------
 //// ARC Function (G2/G3 Command)
@@ -117,9 +124,9 @@ const bool DISABLE_E = false;
 //-----------------------------------------------------------------------
 // Inverting axis direction
 //-----------------------------------------------------------------------
-const bool INVERT_X_DIR = false;
+const bool INVERT_X_DIR = true;
 const bool INVERT_Y_DIR = false;
-const bool INVERT_Z_DIR = true;
+const bool INVERT_Z_DIR = false;
 const bool INVERT_E_DIR = false;
 
 //-----------------------------------------------------------------------
